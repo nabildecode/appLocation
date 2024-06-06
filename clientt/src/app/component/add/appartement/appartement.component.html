@@ -1,0 +1,41 @@
+<div class="body-wrapper">
+  <div class="container-fluid">
+    <h5 class="card-title fw-semibold mb-4">Create Appartement</h5>
+    <div class="card">
+      <div class="card-body">
+        <div *ngIf="errormessage" class="alert alert-danger" role="alert">
+          {{ errormessage }}
+        </div>
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="addresse" class="form-label">Addresse</label>
+            <input type="text" class="form-control" id="addresse" [(ngModel)]="addresse" name="addresse" required>
+          </div>
+          <div class="mb-3">
+            <label for="frais_menage" class="form-label">Frais de Menage</label>
+            <input type="text" class="form-control" id="frais_menage" [(ngModel)]="frais_menage" name="fraisMenage" required>
+          </div>
+          <div class="mb-3">
+            <label for="owner" class="form-label">Propriétaire</label>
+            <select class="form-control" id="owner" [(ngModel)]="selectedOwner" name="owner" required>
+<<<<<<< HEAD
+              <option value="">-- Sélectionnez un propriétaire --</option>
+              <option *ngFor="let owner of owners" [ngValue]="owner">{{ owner.nom + ' ' + owner.prenom + ' (' + owner.email + ')' }}</option>
+            </select>
+=======
+              <option>-- Sélectionnez un propriétaire --</option>
+              <option  *ngFor="let owner of owners" [ngValue]="owner">{{ owner.nom + ' '+owner.prenom +' ('+owner.email+')' }}</option>
+            </select>
+            
+>>>>>>> 8013e37a37823c2f0b4096555a5ae72c4ca74685
+          </div>
+          <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
